@@ -18,7 +18,7 @@
 const Route = use("Route");
 
 Route.get("/", () => {
-  return { greeting: "Welcome to the Adonis API tutorial" };
+  return { greeting: "Welcome to the Adonis API tutorial ,updated welcome page!" };
 });
 
 //User routes
