@@ -7,22 +7,34 @@ const User = use("App/Models/User");
 
 trait("Test/ApiClient");
 
-test("get list of users", async ({ client, assert }) => {
+test("create a new user and fetch it", async ({ client }) => {
   await User.create({
-    username: "user8",
-    email: "testing8@gmail.com",
+    username: "user9",
+    email: "testing9@gmail.com",
     password: "testing1234",
   });
 
-  const response = await client.get("/user/get/?id=8").end();
+  const response = await client.get("/user/get/?id=9").end();
   console.log(response.text);
 
   response.assertStatus(200);
   response.assertJSONSubset([
     {
-      username: "user8",
-      email: "testing8@gmail.com",
+      username: "user9",
+      email: "testing9@gmail.com",
     },
   ]);
-  assert.equal(2 * 3, 6);
+});
+
+test("get a specific user by id", async ({ client, assert }) => {
+  const response = await client.get("/user/get/?id=7").end();
+  console.log(response.text);
+
+  response.assertStatus(200);
+  response.assertJSONSubset([
+    {
+      username: "user7",
+      email: "testing7@gmail.com",
+    },
+  ]);
 });
