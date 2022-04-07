@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +17,9 @@
 
 const Route = use("Route");
 
-Route.get("/", () => {
-  return { greeting: "Welcome to the Adonis API tutorial ,updated welcome page!" };
+Route.get("/", (response) => {
+  // response.send("Welcome to the Adonis API tutorial ,updated welcome page!");
+  return "Welcome to the Adonis API tutorial ,updated welcome page!";
 });
 
 //User routes

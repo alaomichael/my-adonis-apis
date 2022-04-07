@@ -28,6 +28,7 @@
     "@adonisjs/validator": "^5.1.0",
     "@adonisjs/vow": "^1.0.17",
     "mysql": "^2.18.1",
+    "puppeteer": "^13.5.2",
     "sqlite3": "^5.0.2",
     "url-parse": "^1.5.10"
   },
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
+    "@types/puppeteer": "^5.4.5",
     "get-port": "^6.1.2",
     "japa": "^4.0.0"
   }
